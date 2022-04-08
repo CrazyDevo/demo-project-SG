@@ -1,6 +1,7 @@
 package demo_sg;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 
 import java.io.File;
 
@@ -13,6 +14,7 @@ public class ReadFileStepDefs {
              String path="./src/test/resources/files/Demo.png";
              File file=new File(path);
              System.out.println("file.exists() = " + file.exists());
+             Assert.assertTrue(file.exists());
          }else {
              String pathOfProject=System.getProperty("user.dir");
              String pathOfFile="/src/test/resources/files/Demo.png";
