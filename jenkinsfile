@@ -1,6 +1,6 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/vasyafomiuk/demo-project.git'
+        git 'https://github.com/CrazyDevo/demo-project-SG.git'
     }
         
     stage('Run tests'){
