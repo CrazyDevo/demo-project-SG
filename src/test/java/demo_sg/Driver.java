@@ -61,14 +61,18 @@ Driver {
                 case "chrome-headless":
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--window-size=1920,1080"); // Set desired width and height
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
 
                 case "firefox-headless":
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--headless");
+                    firefoxOptions.addArguments("--width=1920");  // Set desired width
+                    firefoxOptions.addArguments("--height=1080"); // Set desired height
                     driverPool.set(new FirefoxDriver(firefoxOptions));
                     break;
+
 
                 case "ie":
                     if (System.getProperty("os.name").toLowerCase().contains("mac")) {
