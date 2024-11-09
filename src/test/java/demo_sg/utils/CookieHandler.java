@@ -12,6 +12,8 @@ public class CookieHandler {
 
     public static void acceptCookies() {
         try {
+
+            Thread.sleep(3000);
             // Adjust the locator to match the "Accept Cookies" button on your site
             List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//*[contains(text(),'Accept')]"));
 
@@ -23,7 +25,7 @@ public class CookieHandler {
                 acceptButton.click();
                 System.out.println("Cookies accepted.");
             }
-        } catch (NoSuchElementException e) {
+        } catch (Exception e) {
             // If the "Accept Cookies" button is not found, it might already be dismissed
             System.out.println("No cookies prompt found.");
         }
