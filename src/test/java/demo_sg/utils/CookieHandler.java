@@ -15,14 +15,14 @@ public class CookieHandler {
 
             Thread.sleep(3000);
             // Adjust the locator to match the "Accept Cookies" button on your site
-            List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//button[contains(text(),'Accept')]"));
+            List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//*[contains(text(),'Accept')]"));
 
             System.out.println(elements.size()+"=============================");
 
 
             WebElement acceptButton = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Accept')]"));
             if (acceptButton.isDisplayed()) {
-                acceptButton.click();
+                elements.get(1).click();
                 System.out.println("Cookies accepted.");
             }
         } catch (Exception e) {
