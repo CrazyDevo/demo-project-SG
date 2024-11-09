@@ -45,16 +45,18 @@ public class StepDefs {
         } catch (Exception e) {
 
         }
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
     }
 
-    @After
+    @After("@ui")
     public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) {
+       // if (scenario.isFailed()) {
 
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
 
-        }
+       // }
 
         System.out.println("---> @After: RUNNING AFTER EACH SCENARIO");
 
