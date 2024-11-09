@@ -3,8 +3,10 @@ package demo_sg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -56,6 +58,17 @@ Driver {
                     driverPool.set(new FirefoxDriver());
                     break;
 
+                case "chrome-headless":
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+                    driverPool.set(new ChromeDriver(chromeOptions));
+                    break;
+
+                case "firefox-headless":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--headless");
+                    driverPool.set(new FirefoxDriver(firefoxOptions));
+                    break;
 
                 case "ie":
                     if (System.getProperty("os.name").toLowerCase().contains("mac")) {
