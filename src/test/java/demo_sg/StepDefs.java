@@ -40,7 +40,7 @@ public class StepDefs {
         } catch (Exception e) {
 
         }
-        // Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
+         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
     }
 
     @After
