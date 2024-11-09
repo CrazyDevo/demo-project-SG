@@ -1,6 +1,7 @@
 package demo_sg;
 
 
+import demo_sg.utils.CookieHandler;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -29,6 +30,8 @@ public class StepDefs {
 
     @When("^I search for \"([^\"]*)\"$")
     public void i_search_for(String search) {
+
+        CookieHandler.acceptCookies();
         searched = search;
         Driver.getDriver().findElement(By.name("q")).sendKeys(search + Keys.ENTER);
     }
