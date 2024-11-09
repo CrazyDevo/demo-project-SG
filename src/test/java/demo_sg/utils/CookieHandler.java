@@ -6,11 +6,18 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class CookieHandler {
 
     public static void acceptCookies() {
         try {
             // Adjust the locator to match the "Accept Cookies" button on your site
+            List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//*[contains(text(),'Accept')]"));
+
+            System.out.println(elements.size()+"=============================");
+
+
             WebElement acceptButton = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Accept')]"));
             if (acceptButton.isDisplayed()) {
                 acceptButton.click();
