@@ -26,7 +26,7 @@ public class StepDefs {
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Driver.getDriver().get("https://www.google.com");
 
-    //    CookieHandler.acceptCookies();
+        CookieHandler.acceptCookies();
 
     }
 
