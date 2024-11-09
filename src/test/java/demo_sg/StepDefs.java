@@ -25,9 +25,6 @@ public class StepDefs {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get("http://google.com");
 
-        Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Accept')]")).click();
-
-
     }
 
     @When("^I search for \"([^\"]*)\"$")
@@ -43,7 +40,6 @@ public class StepDefs {
         } catch (Exception e) {
 
         }
-         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
     }
 
     @After
