@@ -54,6 +54,12 @@ public class StepDefs {
 
         System.out.println("---> @After: RUNNING AFTER EACH SCENARIO");
 
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+
+        }
+
         Driver.closeDriver();
     }
 
