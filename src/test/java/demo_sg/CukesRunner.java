@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
         dryRun = false,
-        tags = ""
+        tags = "",
+        publish = true
 )
 public class CukesRunner {}
