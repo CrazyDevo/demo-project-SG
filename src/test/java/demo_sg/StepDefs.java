@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class StepDefs {
 
     String searched;
+
     @Given("^I am on the home page$")
     public void i_am_on_the_home_page() {
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -28,13 +29,18 @@ public class StepDefs {
 
     @When("^I search for \"([^\"]*)\"$")
     public void i_search_for(String search) {
-        searched=search;
+        searched = search;
         Driver.getDriver().findElement(By.name("q")).sendKeys(search + Keys.ENTER);
     }
 
     @Then("^I should see the results$")
     public void i_should_see_the_results() {
-       // Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+
+        }
+        // Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(searched));
     }
 
     @After
